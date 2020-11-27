@@ -7,10 +7,12 @@
 using namespace std;
 
 // РЕАЛИЗАЦИЯ МЕТОДОВ КЛАССА MyClass ---------
+
 string MyClass::get_time() {
     time_t seconds = time(NULL);
     tm* timeinfo = localtime(&seconds);
-    return asctime(timeinfo);
+    lastTime = asctime(timeinfo);
+    return lastTime;
 }
 
 double MyClass::sum(double x, double y) {
@@ -24,4 +26,24 @@ int MyClass::sum(int x, int y) {
     d = x + y;
     return d;
 }
+
+MyClass::MyClass() {
+}
+
+MyClass::MyClass(string lastTime) {
+    this->lastTime = lastTime;
+}
+
+MyClass::~MyClass() {
+    cout << "Прощай!" << endl;
+}
+
+string MyClass::getLastTime() {
+    return ("LastTime: " + lastTime + "\n");
+}
+
+void MyClass2::myPrint() {
+   cout << "Hello !" << endl;
+}
+
 // -------------------------------
