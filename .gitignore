@@ -32,3 +32,5 @@
 *.app
 /VDM_Lab8v1/build/
 /VDM_Lab8v2/build/
+
+.ccls-cache
